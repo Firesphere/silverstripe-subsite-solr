@@ -44,7 +44,8 @@ class SubsiteState extends SiteState implements SiteStateInterface
      */
     public function currentState(): string
     {
-        return Subsite::currentSubsite()->ID;
+        $subsite = Subsite::currentSubsite();
+        return $subsite ? $subsite->ID : null;
     }
 
     /**
