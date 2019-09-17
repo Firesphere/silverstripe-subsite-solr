@@ -40,9 +40,9 @@ class SubsiteState extends SiteState implements SiteStateInterface
      * Return the current state of the site
      * The current state does not need to be reset in any way for pages
      *
-     * @return string
+     * @return string|null
      */
-    public function currentState(): string
+    public function currentState(): ?string
     {
         $subsite = Subsite::currentSubsite();
         return $subsite ? $subsite->ID : null;
