@@ -7,15 +7,13 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/347f69eaa3082ba6f227/test_coverage)](https://codeclimate.com/github/Firesphere/silverstripe-subsite-solr-search/test_coverage)
 [![Support us](https://enjoy.gitstore.app/repositories/badge-Firesphere/silverstripe-solr-search.svg)](https://enjoy.gitstore.app/repositories/Firesphere/silverstripe-solr-search)
 
-# Solr Search fulltextsearch compatibility module
+# Solr subsite search compatibility module
 
-This module provides some stubs to make migrating from the FulltextSearch module easier.
-
-[See the documentation](https://firesphere.github.io/solr-docs/10-Submodules/01-Fulltext-Search-Compatibility.html)
+[See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/02-Subsites.html)
 
 ## Installation
 
-`composer require firesphere/fts-compat`
+`composer require firesphere/subsite-solr-search`
 
 # Cow?
 
