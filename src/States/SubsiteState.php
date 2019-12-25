@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrSubsites\States;
 
-
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\States\SiteState;
