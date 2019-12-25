@@ -4,7 +4,7 @@
 namespace Firesphere\SolrSubsites\Extensions;
 
 use Firesphere\SolrSearch\Indexes\BaseIndex;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 
 /**
  * Class \Firesphere\SolrSubsites\Extensions\SubsitesExtension
@@ -14,7 +14,7 @@ use SilverStripe\ORM\DataExtension;
  * @package Firesphere\SolrSearch\Subsites
  * @property BaseIndex|SubsitesExtension $owner
  */
-class SubsitesExtension extends DataExtension
+class SubsitesExtension extends Extension
 {
     /**
      * Add the subsite ID for each page, if subsites is enabled.
