@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Firesphere\SolrSearch\Subsites;
+namespace Firesphere\SolrSubsites\States;
 
 
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
@@ -9,6 +9,13 @@ use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Subsites\Model\Subsite;
 
+/**
+ * Class \Firesphere\SolrSubsites\States\SubsiteState
+ *
+ * Apply states for Subsites
+ *
+ * @package Firesphere\SolrSubsites\States
+ */
 class SubsiteState extends SiteState implements SiteStateInterface
 {
 
@@ -42,7 +49,7 @@ class SubsiteState extends SiteState implements SiteStateInterface
      *
      * @return string|null
      */
-    public function currentState(): ?string
+    public function currentState()
     {
         $subsite = Subsite::currentSubsite();
         return $subsite ? $subsite->ID : null;

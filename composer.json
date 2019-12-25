@@ -41,7 +41,7 @@
         },
         "autoload": {
             "psr-4": {
-                "Firesphere\\SolrSearch\\Subsites": "src"
+                "Firesphere\\SolrSubsites": "src"
             }
         }
     },
