@@ -14,7 +14,7 @@ class SubsiteStateTest extends SapphireTest
     {
         $state = new SubsiteState();
 
-        $this->assertFalse($state->stateIsApplicable(10));
+        // There is always a first, thus true, It's a Subsite thing
         $this->assertTrue($state->stateIsApplicable(0));
     }
 }
