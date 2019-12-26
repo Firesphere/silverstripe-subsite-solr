@@ -22,7 +22,7 @@ class SubsiteState extends SiteState implements SiteStateInterface
      * Is this state applicable to this extension
      * In case of subsites, only apply if there actually are subsites
      *
-     * @param string $state
+     * @param int|string $state
      * @return bool
      */
     public function stateIsApplicable($state): bool
