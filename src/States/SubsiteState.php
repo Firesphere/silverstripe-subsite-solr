@@ -1,4 +1,13 @@
 <?php
+/**
+ * Class SubsiteState|Firesphere\SolrSubsites\States\SubsiteState Enable each subsite to be indexed independently by
+ * switching the SiteState
+ * {@see \Firesphere\SolrSearch\States\SiteState} and {@see \Firesphere\SolrSearch\Interfaces\SiteStateInterface}
+ *
+ * @package Firesphere\SolrSubsites\States
+ * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
+ * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
+ */
 
 
 namespace Firesphere\SolrSubsites\States;
