@@ -4,7 +4,7 @@
 namespace Firesphere\SolrSubsites\Tests;
 
 
-use Firesphere\SolrSubsites\Tests\TestIndex;
+use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 
 class SubsiteExtensionTest extends SapphireTest
@@ -15,6 +15,8 @@ class SubsiteExtensionTest extends SapphireTest
         $index = new TestIndex();
 
         $fields = $index->getFilterFields();
+
+        Debug::dump($fields);
 
         $this->assertArrayHasKey('SubsiteID', $fields);
     }

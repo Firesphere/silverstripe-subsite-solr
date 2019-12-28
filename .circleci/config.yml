@@ -37,6 +37,10 @@ jobs:
             echo ' ' > error.log
             chmod 777 error.log
       - run: echo '{}' > composer.lock
+      - restore_cache:
+          keys:
+            - silverstripe-search-cache-{{ checksum "composer.lock" }}
+            - silverstripe-search-cache-
       - run:
           name: Composer requirements
           command: |
@@ -155,6 +159,10 @@ jobs:
           command: |
             echo ' ' > error.log
             chmod 777 error.log
+      - restore_cache:
+          keys:
+            - silverstripe-search-cache-{{ checksum "composer.lock" }}
+            - silverstripe-search-cache-
       - run: echo '{}' > composer.lock
       - run:
           name: Composer requirements
