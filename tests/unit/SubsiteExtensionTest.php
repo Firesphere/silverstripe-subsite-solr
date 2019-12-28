@@ -4,7 +4,6 @@
 namespace Firesphere\SolrSubsites\Tests;
 
 
-use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 
 class SubsiteExtensionTest extends SapphireTest
