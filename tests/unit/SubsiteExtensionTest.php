@@ -16,8 +16,6 @@ class SubsiteExtensionTest extends SapphireTest
 
         $fields = $index->getFilterFields();
 
-        Debug::dump($fields);
-
         $this->assertTrue(in_array('SubsiteID', $fields));
     }
 }
