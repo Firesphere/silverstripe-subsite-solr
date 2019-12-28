@@ -4,6 +4,7 @@
 namespace Firesphere\SolrSubsites\Tests;
 
 
+use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Subsites\Model\Subsite;
@@ -38,5 +39,18 @@ class SubsiteStateTest extends SapphireTest
         $state->activateState(0);
 
         $this->assertTrue(Subsite::$disable_subsite_filter);
+    }
+
+    public function testUpdateQuery()
+    {
+        $state = new SubsiteState();
+        Subsite::$disable_subsite_filter = false;
+        $query = new BaseQuery();
+
+        $state->updateQuery($query);
+
+        $result = $query->getFilter();
+
+        $this->assertArrayHasKey('SubsiteID', $result);
     }
 }
