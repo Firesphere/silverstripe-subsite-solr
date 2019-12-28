@@ -28,10 +28,8 @@ class SubsitesExtension extends Extension
     public function onAfterInit()
     {
         // Add default support for Subsites.
-        if (class_exists('SilverStripe\\Subsites\\Model\\Subsite')) {
-            /** @var BaseIndex $owner */
-            $owner = $this->owner;
-            $owner->addFilterField('SubsiteID');
-        }
+        /** @var BaseIndex $owner */
+        $owner = $this->owner;
+        $owner->addFilterField('SubsiteID');
     }
 }
