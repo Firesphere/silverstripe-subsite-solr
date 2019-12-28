@@ -18,6 +18,6 @@ class SubsiteExtensionTest extends SapphireTest
 
         Debug::dump($fields);
 
-        $this->assertArrayHasKey('SubsiteID', $fields);
+        $this->assertTrue(in_array('SubsiteID', $fields));
     }
 }
