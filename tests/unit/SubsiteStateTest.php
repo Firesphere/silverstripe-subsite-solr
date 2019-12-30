@@ -43,8 +43,10 @@ class SubsiteStateTest extends SapphireTest
 
     public function testUpdateQuery()
     {
+        $this->markTestSkipped('No Subsites to test against yet');
         $state = new SubsiteState();
         Subsite::$disable_subsite_filter = false;
+        Subsite::create([]);
         $query = new BaseQuery();
 
         $state->updateQuery($query);

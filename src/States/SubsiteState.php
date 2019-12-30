@@ -15,6 +15,7 @@ namespace Firesphere\SolrSubsites\States;
 use Firesphere\SolrSearch\Interfaces\SiteStateInterface;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSearch\States\SiteState;
+use SilverStripe\Core\ClassInfo;
 use SilverStripe\Subsites\Model\Subsite;
 
 /**
@@ -83,8 +84,12 @@ class SubsiteState extends SiteState implements SiteStateInterface
      */
     public function updateQuery(&$query)
     {
-        if (!Subsite::$disable_subsite_filter) {
-            $query->addFilter('SubsiteID', Subsite::getSubsiteIDForDomain());
+        // Only add a Subsite filter if there are actually subsites to filter on
+        if (!Subsite::$disable_subsite_filter && Subsite::get()->exists()) {
+            foreach ($query->getClasses() as $class) {
+                $class = ClassInfo::shortName($class);
+                $query->addFilter($class . '_SubsiteID', Subsite::getSubsiteIDForDomain());
+            }
         }
     }
 }
