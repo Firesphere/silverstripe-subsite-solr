@@ -3,12 +3,10 @@
 
 namespace Firesphere\SolrSubsites\Tests;
 
-
 use SilverStripe\Dev\SapphireTest;
 
 class SubsiteExtensionTest extends SapphireTest
 {
-
     public function testOnAfterInit()
     {
         $index = new TestIndex();

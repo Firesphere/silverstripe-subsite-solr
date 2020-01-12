@@ -3,7 +3,6 @@
 
 namespace Firesphere\SolrSubsites\Tests;
 
-
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
 use SilverStripe\Dev\SapphireTest;
@@ -11,7 +10,6 @@ use SilverStripe\Subsites\Model\Subsite;
 
 class SubsiteStateTest extends SapphireTest
 {
-
     public function testIsApplicable()
     {
         $state = new SubsiteState();
