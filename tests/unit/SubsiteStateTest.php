@@ -6,6 +6,7 @@ namespace Firesphere\SolrSubsites\Tests;
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Subsites\Model\Subsite;
 
@@ -60,6 +61,8 @@ class SubsiteStateTest extends SapphireTest
         $state->updateQuery($query);
 
         $result = $query->getFilter();
+
+        Debug::dump($result);
 
         $this->assertArrayHasKey('SiteTree_SubsiteID', $result);
 
