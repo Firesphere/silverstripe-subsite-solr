@@ -53,7 +53,9 @@ class SubsiteStateTest extends SapphireTest
 
         $this->assertNotContains('SiteTree_SubsiteID', $result);
 
-        Subsite::create(['Title' => 'Hello'])->write();
+        $id = Subsite::create(['Title' => 'Hello'])->write();
+
+        Subsite::changeSubsite($id);
 
         $state->updateQuery($query);
 
