@@ -5,6 +5,7 @@ namespace Firesphere\SolrSubsites\Tests;
 
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
+use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Subsites\Model\Subsite;
 
@@ -41,16 +42,24 @@ class SubsiteStateTest extends SapphireTest
 
     public function testUpdateQuery()
     {
-        $this->markTestSkipped('No Subsites to test against yet');
         $state = new SubsiteState();
         Subsite::$disable_subsite_filter = false;
-        Subsite::create([]);
         $query = new BaseQuery();
+        $query->addClass(SiteTree::class);
 
         $state->updateQuery($query);
 
         $result = $query->getFilter();
 
-        $this->assertArrayHasKey('SubsiteID', $result);
+        $this->assertNotContains('SiteTree_SubsiteID', $result);
+
+        Subsite::create(['Title' => 'Hello'])->write();
+
+        $state->updateQuery($query);
+
+        $result = $query->getFilter();
+
+        $this->assertArrayHasKey('SiteTree_SubsiteID', $result);
+
     }
 }

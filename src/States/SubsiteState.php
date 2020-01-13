@@ -86,11 +86,11 @@ class SubsiteState extends SiteState implements SiteStateInterface
     public function updateQuery(&$query)
     {
         // Only add a Subsite filter if there are actually subsites to filter on
-        if (!Subsite::$disable_subsite_filter && Subsite::get()->exists()) {
+        if (!Subsite::$disable_subsite_filter && Subsite::currentSubsite()) {
             foreach ($query->getClasses() as $class) {
                 if (DataObject::getSchema()->hasOneComponent($class, 'Subsite')) {
                     $class = ClassInfo::shortName($class);
-                    $query->addFilter($class . '_SubsiteID', Subsite::getSubsiteIDForDomain());
+                    $query->addFilter($class . '.SubsiteID', Subsite::currentSubsite()->ID);
                 }
             }
         }
