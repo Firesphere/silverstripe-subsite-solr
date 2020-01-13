@@ -5,6 +5,7 @@ namespace Firesphere\SolrSubsites\Tests;
 
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
+use SilverStripe\Subsites\State\SubsiteState as SubsiteStateHandler;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
@@ -56,15 +57,13 @@ class SubsiteStateTest extends SapphireTest
 
         $id = Subsite::create(['Title' => 'Hello'])->write();
 
+        SubsiteStateHandler::singleton()->setUseSessions(true);
         Subsite::changeSubsite($id);
 
         $state->updateQuery($query);
 
         $result = $query->getFilter();
 
-        Debug::dump($result);
-
         $this->assertArrayHasKey('SiteTree_SubsiteID', $result);
-
     }
 }
