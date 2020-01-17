@@ -71,6 +71,7 @@ class SubsiteState extends SiteState implements SiteStateInterface
      *
      * @param string $state
      * @return mixed
+     * @todo This needs to properly set the state
      */
     public function activateState($state)
     {

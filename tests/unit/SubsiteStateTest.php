@@ -5,11 +5,10 @@ namespace Firesphere\SolrSubsites\Tests;
 
 use Firesphere\SolrSearch\Queries\BaseQuery;
 use Firesphere\SolrSubsites\States\SubsiteState;
-use SilverStripe\Subsites\State\SubsiteState as SubsiteStateHandler;
 use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
 use SilverStripe\Subsites\Model\Subsite;
+use SilverStripe\Subsites\State\SubsiteState as SubsiteStateHandler;
 
 class SubsiteStateTest extends SapphireTest
 {
