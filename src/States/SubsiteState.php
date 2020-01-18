@@ -18,6 +18,7 @@ use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\ClassInfo;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Subsites\Model\Subsite;
+use SilverStripe\Subsites\State\SubsiteState as BaseSubsiteState;
 
 /**
  * Class \Firesphere\SolrSubsites\States\SubsiteState
@@ -50,6 +51,7 @@ class SubsiteState extends SiteState implements SiteStateInterface
      */
     public function setDefaultState($state = null)
     {
+        singleton(BaseSubsiteState::class)->setUseSessions(true);
         Subsite::changeSubsite($state);
     }
 
@@ -70,19 +72,19 @@ class SubsiteState extends SiteState implements SiteStateInterface
      * States don't need to be activated, as we index all pages anyway, so set it to disabled
      *
      * @param string $state
-     * @return mixed
-     * @todo This needs to properly set the state
+     * @return void
      */
     public function activateState($state)
     {
-        Subsite::$disable_subsite_filter = true;
+        singleton(BaseSubsiteState::class)->setUseSessions(true);
+        Subsite::changeSubsite($state);
     }
 
     /**
      * Method to alter the query. Can be no-op.
      *
      * @param BaseQuery $query
-     * @return mixed
+     * @return void
      */
     public function updateQuery(&$query)
     {
