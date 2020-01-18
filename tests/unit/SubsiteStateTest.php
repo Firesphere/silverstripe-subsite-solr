@@ -38,7 +38,8 @@ class SubsiteStateTest extends SapphireTest
         $state = new SubsiteState();
         $state->activateState(0);
 
-        $this->assertTrue(Subsite::$disable_subsite_filter);
+        $this->assertFalse(Subsite::$disable_subsite_filter);
+        $this->assertNull(Subsite::currentSubsite());
     }
 
     public function testUpdateQuery()
