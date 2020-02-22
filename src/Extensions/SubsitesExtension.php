@@ -10,6 +10,7 @@
 namespace Firesphere\SolrSubsites\Extensions;
 
 use Firesphere\SolrSearch\Indexes\BaseIndex;
+use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\Extension;
 
 /**
@@ -22,6 +23,11 @@ use SilverStripe\Core\Extension;
  */
 class SubsitesExtension extends Extension
 {
+    public function onBeforeInit()
+    {
+        SiteState::addStates(['unfiltered']);
+    }
+
     /**
      * Add the subsite ID for each page, if subsites is enabled.
      */

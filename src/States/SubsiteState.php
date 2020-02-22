@@ -39,7 +39,7 @@ class SubsiteState extends SiteState implements SiteStateInterface
      */
     public function stateIsApplicable($state): bool
     {
-        return Subsite::get()->byID($state) !== null;
+        return Subsite::get()->byID($state) !== null && $state !== 0;
     }
 
     /**
@@ -69,15 +69,14 @@ class SubsiteState extends SiteState implements SiteStateInterface
 
     /**
      * Activate a given state. This should only be done if the state is applicable
-     * States don't need to be activated, as we index all pages anyway, so set it to disabled
+     * In the case of Subsites, we just want to disable the filter
      *
      * @param string $state
      * @return void
      */
     public function activateState($state)
     {
-        singleton(BaseSubsiteState::class)->setUseSessions(true);
-        Subsite::changeSubsite($state);
+        Subsite::disable_subsite_filter(true);
     }
 
     /**
