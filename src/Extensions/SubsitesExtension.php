@@ -23,6 +23,9 @@ use SilverStripe\Core\Extension;
  */
 class SubsitesExtension extends Extension
 {
+    /**
+     * Add default unfiltered state
+     */
     public function onBeforeInit()
     {
         SiteState::addStates(['unfiltered']);
