@@ -4,7 +4,7 @@
  * switching the SiteState
  * {@see \Firesphere\SolrSearch\States\SiteState} and {@see \Firesphere\SolrSearch\Interfaces\SiteStateInterface}
  *
- * @package Firesphere\SolrSubsites\States
+ * @package Firesphere\Solr\Subsites
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
@@ -25,7 +25,7 @@ use SilverStripe\Subsites\State\SubsiteState as BaseSubsiteState;
  *
  * Apply states for Subsites
  *
- * @package Firesphere\SolrSubsites\States
+ * @package Firesphere\Solr\Subsites
  */
 class SubsiteState extends SiteState implements SiteStateInterface
 {

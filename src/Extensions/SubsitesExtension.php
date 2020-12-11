@@ -2,7 +2,7 @@
 /**
  * Class SubsitesExtension|Firesphere\SolrSubsites\Extensions\SubsitesExtension Add Subsite filter field to the index
  *
- * @package Firesphere\SolrSubsites\Extensions
+ * @package Firesphere\Solr\Subsites
  * @author Simon `Firesphere` Erkelens; Marco `Sheepy` Hermo
  * @copyright Copyright (c) 2018 - now() Firesphere & Sheepy
  */
