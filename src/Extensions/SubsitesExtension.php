@@ -18,7 +18,7 @@ use SilverStripe\Core\Extension;
  *
  * Add support for subsites in the Index for filtering
  *
- * @package Firesphere\SolrSearch\Subsites
+ * @package Firesphere\Solr\Subsites
  * @property BaseIndex|SubsitesExtension $owner
  */
 class SubsitesExtension extends Extension
