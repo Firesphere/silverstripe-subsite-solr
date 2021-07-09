@@ -9,7 +9,7 @@
 
 # Solr subsite search compatibility module
 
-[See the documentation](https://firesphere.github.io/solr-docs/11-Submodules/02-Subsites.html)
+[See the documentation](https://firesphere.github.io/solr-docs/12-Submodules/02-Subsites.html)
 
 ## Installation
 
