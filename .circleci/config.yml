@@ -11,7 +11,7 @@ jobs:
       - image: ssmarco/php-solr:latest
         environment:
           - SS_DATABASE_SERVER=127.0.0.1
-          - SS_DATABASE_USERNAME=user
+          - SS_DATABASE_USERNAME=root
           - SS_DATABASE_PASSWORD=ubuntu
           - SS_DATABASE_NAME=circle_test
           - SS_ENVIRONMENT_TYPE=test
@@ -20,7 +20,7 @@ jobs:
           - DEBUGBAR_DISABLE=true
       - image: circleci/mysql:5.7
         environment:
-          - MYSQL_USER=user
+          - MYSQL_USER=toor
           - MYSQL_ROOT_PASSWORD=ubuntu
           - MYSQL_DATABASE=circle_test
           - MYSQL_HOST=127.0.0.1
