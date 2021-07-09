@@ -71,12 +71,12 @@ class SubsiteState extends SiteState implements SiteStateInterface
      * Activate a given state. This should only be done if the state is applicable
      * In the case of Subsites, we just want to disable the filter
      *
-     * @param string $state
+     * @param int $state
      * @return void
      */
     public function activateState($state)
     {
-        Subsite::disable_subsite_filter(true);
+        Subsite::changeSubsite($state);
     }
 
     /**

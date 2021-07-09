@@ -12,6 +12,7 @@ namespace Firesphere\SolrSubsites\Extensions;
 use Firesphere\SolrSearch\Indexes\BaseIndex;
 use Firesphere\SolrSearch\States\SiteState;
 use SilverStripe\Core\Extension;
+use SilverStripe\Subsites\Model\Subsite;
 
 /**
  * Class \Firesphere\SolrSubsites\Extensions\SubsitesExtension
@@ -28,7 +29,8 @@ class SubsitesExtension extends Extension
      */
     public function onBeforeInit()
     {
-        SiteState::addStates(['unfiltered']);
+        $sites = Subsite::get()->filter(['IsPublic' => true]);
+        SiteState::addStates($sites->getIDList());
     }
 
     /**
