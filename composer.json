@@ -24,7 +24,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "firesphere/solr-search": "^1.0",
+        "firesphere/solr-search": ">=1.0",
         "silverstripe/subsites": "^2"
     },
     "require-dev": {
