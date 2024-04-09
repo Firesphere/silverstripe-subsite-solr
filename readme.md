@@ -13,6 +13,10 @@
 
 [See the documentation](https://firesphere.github.io/solr-docs/12-Submodules/02-Subsites.html)
 
+## Disclaimer
+
+If this module breaks your website, you get to keep all the pieces.
+
 ## Installation
 
 `composer require firesphere/subsite-solr-search`
